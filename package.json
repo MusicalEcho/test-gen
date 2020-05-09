@@ -1,0 +1,45 @@
+{
+  "name": "test-gen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start: dev": "npm run front:watch & npm run backend:watch",
+    "front:watch": "webpack-dev-server --hot --env.API_URL=localhost:3000",
+    "backend:watch": "nodemon server.ts",
+    "build": "webpack --mode production",
+    "eslint": "eslint --fix --ext .ts,.tsx ./src"
+  },
+  "keywords": [],
+  "author": "Vasilisa",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "diff-match-patch": "^1.0.4",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/express": "^4.17.6",
+    "@types/node": "^13.13.5",
+    "@types/socket.io": "^2.1.4",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb-typescript": "^7.2.1",
+    "eslint-plugin-import": "^2.20.2",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "nodemon": "^2.0.3",
+    "ts-loader": "^7.0.3",
+    "ts-node": "^8.10.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
