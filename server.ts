@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import { patchToText } from './src/textDiffHelpers';
 
-const PORT = parseInt(process.env.SERVER_PORT || '8080');
+const PORT = parseInt(process.env.PORT || '8080');
 
 const app: express.Application = express();
 const server = http.createServer(app);

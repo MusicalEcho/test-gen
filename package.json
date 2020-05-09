@@ -4,12 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start: dev": "npm run front:watch & npm run backend:watch",
-    "front:watch": "webpack-dev-server --hot --env.API_URL=localhost:3000",
-    "backend:watch": "nodemon server.ts",
+    "start:dev": "npm run front:watch & npm run backend:watch",
+    "front:watch": "webpack-dev-server --hot --env.API_URL=localhost:8080",
+    "backend:watch": "PORT=8080 nodemon server.ts ",
     "build": "webpack --mode production",
     "test": "jest",
     "eslint": "eslint --fix --ext .ts,.tsx ./src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run eslint",
+      "pre-push": "npm run test"
+    }
   },
   "keywords": [],
   "author": "Vasilisa",
@@ -31,12 +37,12 @@
     "@types/socket.io": "^2.1.4",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "babel-loader": "^8.1.0",
-    "copy-webpack-plugin": "^5.1.1",
     "eslint": "^7.0.0",
     "eslint-config-airbnb-typescript": "^7.2.1",
     "eslint-plugin-import": "^2.20.2",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
+    "husky": "^4.2.5",
     "jest": "^26.0.1",
     "nodemon": "^2.0.3",
     "ts-jest": "^25.5.0",
